@@ -201,6 +201,18 @@ if check_component_existence():
     else:
         st.info("Click 'Generate Forecast' to see the prediction for the next 24 hours.")
 
+    st.markdown("---")
+    
+    # --- Historical Pollutant Trends Section ---
+    st.subheader(f"Historical Pollutant Trends for {selected_city}")
+    if not df_raw_cached.empty:
+        # Display CO_AQI and NO2_AQI for the last 15 rows
+        historical_trends_df = df_raw_cached[['CO_AQI', 'NO2_AQI']].tail(15)
+        st.line_chart(historical_trends_df)
+        st.caption(f"Note: This trend data is derived from the single provided dataset ({RAW_DATA_PATH.split('/')[-1]}) and is not truly city-specific.")
+    else:
+        st.info("Historical data not loaded, cannot display trends.")
+
 else:
     st.warning("Application is not fully set up. Please address the issues listed above.")
 
