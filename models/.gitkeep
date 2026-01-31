@@ -1,0 +1,2 @@
+# This directory is for trained models.
+# The 'air_quality_pipeline.joblib' file will be saved here after training.
