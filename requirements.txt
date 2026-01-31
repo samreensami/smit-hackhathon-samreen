@@ -1,7 +1,8 @@
-altair==4.2.2
+streamlit>=1.31.0
 pandas
 scikit-learn
 xgboost
-streamlit
-numpy
 joblib
+numpy
+matplotlib
+altair==4.2.2
