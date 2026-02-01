@@ -1,0 +1,8 @@
+venv/
+*.pyc
+__pycache__/
+.DS_Store
+.ipynb_checkpoints/
+data/processed/*.csv
+models/*.joblib
+results/*.csv
